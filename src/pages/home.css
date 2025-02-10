@@ -1,0 +1,198 @@
+/* ===== Global Styles ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ===== Hero Section ===== */
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+  }
+  
+  .hero .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+    z-index: 1;
+  }
+  
+  .hero .overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 700px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  
+  .hero .overlay h1 {
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    color: #FFD700;
+    text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.8);
+  }
+  
+  .hero .overlay p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+  
+  .hero .highlight {
+    color: #FFD700;
+    font-weight: bold;
+  }
+  
+  /* ===== About Me Section ===== */
+  .about-me {
+    padding: 60px 20px;
+    background-color: #1E1E1E;
+    text-align: center;
+  }
+  
+  .about-me .content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #292929;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .about-me h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #FFD700;
+  }
+  
+  .about-me p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+  }
+  
+  /* ===== Skills Section ===== */
+  .skills {
+    text-align: center;
+    padding: 90px 120px;
+    background-color: #1E1E1E;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .skills h2 {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 20px;
+  }
+  
+  /* Skills Wrapper */
+  .skills-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Skills Container */
+  .skills-container {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollSkills 15s linear infinite;
+  }
+  
+  /* Skill Box */
+  .skill-box {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #FFD700;
+    background-color: #292929;
+    padding: 15px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    min-width: 180px;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* 🎇 Special Hover Effect 🎇 */
+  .skill-box:hover {
+    transform: scale(1.2);
+    background-color: #FFD700;
+    color: black;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  }
+  
+  /* Infinite Scrolling Animation */
+  @keyframes scrollSkills {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Pausing Animation on Hover */
+  .skills-wrapper:hover .skills-container {
+    animation-play-state: paused;
+  }
+  
+  /* ===== Footer Section ===== */
+  .footer {
+    background-color: #1E1E1E;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+  }
+  
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+  
+  .footer-content p {
+    margin: 5px 0;
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media (max-width: 768px) {
+    .hero .overlay h1 {
+        font-size: 2.2rem;
+    }
+  
+    .hero .overlay p {
+        font-size: 1rem;
+    }
+  
+    .about-me h2,
+    .skills h2 {
+        font-size: 2rem;
+    }
+  }
+  
