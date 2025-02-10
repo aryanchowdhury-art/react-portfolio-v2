@@ -1,47 +1,33 @@
-/* nav.css */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 10px 20px;
+  background-color: #333;
+  border-radius: 8px;
+}
 
-/* Styling the navigation list */
-nav ul {
-    text-decoration: none; /* Remove underline from links */
-    display: flex;
-    list-style: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-    gap: 1.5rem; /* Space between items */
-    align-items: center;
-    justify-content: center; /* Center items */
-    background-color: #333; /* Dark background */
-    border-radius: 8px; /* Rounded corners */
-    padding: 10px 20px; /* Padding inside the navigation */
-  }
-  
-  /* Styling list items */
-  nav ul li {
-    padding: 18px 25px; /* Space around the text */
-    font-size: 1rem; /* Font size */
-    font-weight: bold; /* Bold text */
-    text-transform: capitalize; /* Capitalize first letters */
-    color: #f1f1f1; /* Text color */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
-  }
-  
-  /* Hover effects */
-  nav ul li:hover {
-    background-color: #555; /* Darker background on hover */
-    color: #FFD700; /* Gold text color for a luxurious feel */
-    border-radius: 12px; /* Rounded corners on hover */
-  }
-  
-  /* Responsive styling */
-  @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack items vertically */
-        gap: 1rem; /* Adjust spacing */
-    }
-  
-    nav ul li {
-        text-align: center; /* Center-align text */
-    }
-  }
-  
+.navbar li {
+  padding: 18px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #f1f1f1;
+  display: block; /* Make the entire area clickable */
+  width: 100%;
+  height: 100%;
+}
+
+.navbar li:hover {
+  background-color: #555;
+  color: #FFD700;
+  border-radius: 12px;
+}
