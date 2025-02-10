@@ -1,0 +1,1 @@
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:15px,20px;background-color:#000}.logo{font-size:24px;font-weight:700}.nav-links{list-style:none;display:flex;gap:20px}.nav-links li{display:inline}.nav-links a{color:#fff;text-decoration:none;font-size:18px}.nav-links a:hover{text-decoration:underline}
