@@ -1,0 +1,157 @@
+/* ===== Enhanced Luxurious About Page Styling ===== */
+.about {
+    background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+    color: #e0e0e0;
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Elegant Section Wrapper */
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: rgba(30, 30, 30, 0.95);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* Section Titles - Gold Shine Effect */
+.section-title {
+    font-size: 2.8rem;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #FFD700, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Subtle Glow Effect */
+@keyframes glow {
+    from { text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); }
+    to { text-shadow: 0 0 20px rgba(255, 215, 0, 1); }
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #FFD700;
+    margin: 40px 0 20px;
+    font-family: "Playfair Display", serif;
+}
+
+/* Stylish Subtitle */
+h3 {
+    font-size: 1.6rem;
+    color: #f1f1f1;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* General Text Styling */
+p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Highlighted Gold Text */
+.highlight {
+    color: #FFD700;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.7);
+}
+
+/* Section Styling */
+section {
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* Luxury Gold Tech Tag */
+.tech {
+    font-weight: bold;
+    color: #000;
+    background: linear-gradient(to right, #FFD700, #ffdd44);
+    padding: 6px 14px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(255, 215, 0, 0.5);
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: #ddd;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+    color: #FFD700;
+}
+
+/* Bullet Point with a Gold Glow */
+ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-size: 1.3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 35px;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-top: 30px;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p, ul li {
+        font-size: 1.1rem;
+    }
+}
