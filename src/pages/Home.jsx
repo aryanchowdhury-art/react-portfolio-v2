@@ -2,35 +2,36 @@ import { useState, useEffect, useRef } from 'react';
 import './home.css';
 
 function Home() {
-  const [count, setCount] = useState(0); // State to hold the counter value
+  const [count, setCount] = useState(0);
   const skillsRef = useRef(null);
+  const totalSkills = 18;
 
   useEffect(() => {
     const skillsContainer = skillsRef.current;
     if (!skillsContainer) return;
 
-    // Count up to the number of skills when the section is in view
-    const skillsCount = 18; // Total number of skills
-    let currentCount = 0;
-    const interval = setInterval(() => {
-      if (currentCount < skillsCount) {
-        setCount(currentCount + 1);
-        currentCount++;
-      } else {
-        clearInterval(interval); // Stop when it reaches the total skills
-      }
-    }, 100);
-
-    // Scroll event listener to trigger count when the section is visible
-    const onScroll = () => {
-      if (skillsContainer.getBoundingClientRect().top <= window.innerHeight) {
-        clearInterval(interval); // Ensure the counter starts when the section is in view
+    let interval;
+    const handleScroll = () => {
+      const rect = skillsContainer.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.75 && count === 0) {
+        let currentCount = 0;
+        interval = setInterval(() => {
+          if (currentCount < totalSkills) {
+            setCount(prev => prev + 1);
+            currentCount++;
+          } else {
+            clearInterval(interval);
+          }
+        }, 100);
       }
     };
 
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(interval);
+    };
+  }, [count]);
 
   return (
     <div>
@@ -39,7 +40,7 @@ function Home() {
         <div className="overlay">
           <h1>Welcome to My Portfolio</h1>
           <p>
-            I am <span className="highlight">T. Aryan Kumar Chowdhury</span>, a passionate developer specialized in AI and front-end development.
+            I am <span className="highlight">T. Aryan Kumar Chowdhury</span>, a passionate developer specializing in AI and front-end development.
           </p>
         </div>
       </section>
@@ -59,22 +60,37 @@ function Home() {
         <h2>My Skills</h2>
         <div className="skills-wrapper">
           <div className="skills-container" ref={skillsRef}>
-            {[...Array(2)].map((_, i) =>
-              [
-                "AI", "Machine Learning", "Deep Learning", "NLP", "React", "Node.js",
-                "MongoDB", "JavaScript", "Python", "CSS", "HTML", "Express.js",
-                "TensorFlow", "Keras", "PyTorch", "C", "C++", "Java", "SQL"
-              ].map((skill, index) => (
-                <div key={`${i}-${index}`} className="skill-box">
-                  <span>{skill}</span>
-                </div>
-              ))
-            )}
+            <div className="skill-category">
+              <h3>Artificial Intelligence & Machine Learning</h3>
+              <div className="skill-box">AI</div>
+              <div className="skill-box">Machine Learning</div>
+              <div className="skill-box">Deep Learning</div>
+              <div className="skill-box">NLP</div>
+              <div className="skill-box">TensorFlow</div>
+              <div className="skill-box">Keras</div>
+              <div className="skill-box">PyTorch</div>
+            </div>
+            <div className="skill-category">
+              <h3>Web Development</h3>
+              <div className="skill-box">React</div>
+              <div className="skill-box">Node.js</div>
+              <div className="skill-box">Express.js</div>
+              <div className="skill-box">MongoDB</div>
+              <div className="skill-box">JavaScript</div>
+              <div className="skill-box">HTML</div>
+              <div className="skill-box">CSS</div>
+            </div>
+            <div className="skill-category">
+              <h3>Programming Languages</h3>
+              <div className="skill-box">Python</div>
+              <div className="skill-box">C</div>
+              <div className="skill-box">C++</div>
+              <div className="skill-box">Java</div>
+              <div className="skill-box">SQL</div>
+            </div>
           </div>
         </div>
-        <div className="skills-counter">
-          <p>{count} Skills</p>
-        </div>
+        
       </section>
 
       {/* Footer */}
