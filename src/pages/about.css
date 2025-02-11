@@ -1,0 +1,130 @@
+/* ===== Luxurious About Page Styling ===== */
+.about {
+    background: linear-gradient(to right, #121212, #1a1a1a);
+    color: #e0e0e0;
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  /* Container: Adds more padding for breathing space */
+  .container {
+    max-width: 900px;
+    margin: auto;
+    background: rgba(30, 30, 30, 0.9);
+    padding: 60px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Section Titles */
+  .section-title {
+    font-size: 3rem;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    color: #FFD700;
+    margin-bottom: 40px; /* Increased margin for spacing */
+    letter-spacing: 2px;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+    color: #FFD700;
+    margin: 50px 0 20px; /* Added more margin to separate sections */
+    font-family: "Playfair Display", serif;
+  }
+  
+  h3 {
+    font-size: 1.7rem;
+    color: #f1f1f1;
+    font-weight: bold;
+    margin-top: 35px;
+    margin-bottom: 20px; /* Extra spacing below each subheading */
+  }
+  
+  /* General Text Styling */
+  p {
+    font-size: 1.2rem;
+    line-height: 1.8; /* Improved readability */
+    color: #ddd;
+    margin-bottom: 20px; /* Space between paragraphs */
+  }
+  
+  /* Adds Space Between Sections */
+  section {
+    padding: 40px 0; /* Increased top and bottom padding */
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2); /* Subtle divider */
+  }
+  
+  section:last-child {
+    border-bottom: none;
+  }
+  
+  /* Highlight Important Text */
+  .highlight {
+    color: #FFD700;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.7);
+  }
+  
+  /* Luxury Gold Tech Tag */
+  .tech {
+    font-weight: bold;
+    color: #000;
+    background: linear-gradient(to right, #FFD700, #ffdd44);
+    padding: 6px 14px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(255, 215, 0, 0.5);
+    display: inline-block;
+    margin-top: 5px;
+  }
+  
+  /* List Styles */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0; /* Space between lists */
+  }
+  
+  ul li {
+    font-size: 1.2rem;
+    margin-bottom: 15px; /* Increased spacing between bullet points */
+    padding-left: 30px;
+    position: relative;
+    color: #ddd;
+  }
+  
+  ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-size: 1.3rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 40px;
+    }
+  
+    .section-title {
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+    }
+  
+    h2 {
+      font-size: 2rem;
+      margin-top: 40px;
+    }
+  
+    h3 {
+      font-size: 1.5rem;
+    }
+  
+    p,
+    ul li {
+      font-size: 1rem;
+    }
+  }
+  
