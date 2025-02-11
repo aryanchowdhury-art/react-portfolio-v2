@@ -36,6 +36,12 @@
   width: 10%;
   height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  
 }
 
 .navbar li a {
@@ -47,18 +53,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  border: 2px solid transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 12px;
-  box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  
 }
 
 .navbar li:hover {
   background-color: #555;
   color: #FFD700;
   border-radius: 12px;
-  box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  
 }
