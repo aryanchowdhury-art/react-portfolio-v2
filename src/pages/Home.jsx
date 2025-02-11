@@ -1,24 +1,35 @@
-import { useRef, useEffect } from "react";
-import "./home.css";
+import { useState, useEffect, useRef } from 'react';
+import './home.css';
 
 function Home() {
+  const [count, setCount] = useState(0); // State to hold the counter value
   const skillsRef = useRef(null);
 
   useEffect(() => {
-    const scrollContainer = skillsRef.current;
-    if (!scrollContainer) return;
+    const skillsContainer = skillsRef.current;
+    if (!skillsContainer) return;
 
-    let speed = 1; // Speed of scrolling
-    const scroll = () => {
-      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-        scrollContainer.scrollLeft = 0; // Reset for infinite effect
+    // Count up to the number of skills when the section is in view
+    const skillsCount = 18; // Total number of skills
+    let currentCount = 0;
+    const interval = setInterval(() => {
+      if (currentCount < skillsCount) {
+        setCount(currentCount + 1);
+        currentCount++;
       } else {
-        scrollContainer.scrollLeft += speed;
+        clearInterval(interval); // Stop when it reaches the total skills
+      }
+    }, 100);
+
+    // Scroll event listener to trigger count when the section is visible
+    const onScroll = () => {
+      if (skillsContainer.getBoundingClientRect().top <= window.innerHeight) {
+        clearInterval(interval); // Ensure the counter starts when the section is in view
       }
     };
 
-    const interval = setInterval(scroll, 20);
-    return () => clearInterval(interval);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
@@ -54,10 +65,15 @@ function Home() {
                 "MongoDB", "JavaScript", "Python", "CSS", "HTML", "Express.js",
                 "TensorFlow", "Keras", "PyTorch", "C", "C++", "Java", "SQL"
               ].map((skill, index) => (
-                <div key={`${i}-${index}`} className="skill-box">{skill}</div>
+                <div key={`${i}-${index}`} className="skill-box">
+                  <span>{skill}</span>
+                </div>
               ))
             )}
           </div>
+        </div>
+        <div className="skills-counter">
+          <p>{count} Skills</p>
         </div>
       </section>
 
