@@ -30,6 +30,19 @@ function Contact() {
           </a>
         </div>
       </div>
+
+      {/* Footer */}
+      <div className="footer">
+        <p>© 2025 Aryan Chowdhury. All Rights Reserved.</p>
+        <div className="footer-links">
+          <a href="https://www.linkedin.com/in/aryanchowdhury" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a href="https://github.com/aryanchowdhury-art" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
