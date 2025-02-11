@@ -31,7 +31,6 @@ function Home() {
             I am <span className="highlight">T. Aryan Kumar Chowdhury</span>, a passionate developer specialized in AI and front-end development.
           </p>
         </div>
-        <img src="/aryanimage.jpg" alt="Portfolio Background" className="background-image" />
       </section>
 
       {/* About Me Section */}
