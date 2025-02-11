@@ -8,11 +8,10 @@ function Home() {
     const scrollContainer = skillsRef.current;
     if (!scrollContainer) return;
 
-    const speed = 1; // Adjust scrolling speed
-
+    let speed = 1; // Speed of scrolling
     const scroll = () => {
       if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-        scrollContainer.scrollLeft = 0; // Reset for infinite loop
+        scrollContainer.scrollLeft = 0; // Reset for infinite effect
       } else {
         scrollContainer.scrollLeft += speed;
       }
@@ -29,10 +28,10 @@ function Home() {
         <div className="overlay">
           <h1>Welcome to My Portfolio</h1>
           <p>
-            I am <span className="highlight">T. Aryan Kumar Chowdhury</span>, a passionate developer specializing in AI and front-end development.
+            I am <span className="highlight">T. Aryan Kumar Chowdhury</span>, a passionate developer specialized in AI and front-end development.
           </p>
         </div>
-        <img src="/aryanimage.jpg" alt="Portfolio Background" className="background-image" />
+        <img src="src/pages/aryanimage.jpg" alt="Portfolio Background" className="background-image" />
       </section>
 
       {/* About Me Section */}
@@ -52,9 +51,9 @@ function Home() {
           <div className="skills-container" ref={skillsRef}>
             {[...Array(2)].map((_, i) =>
               [
-                "AI", "Machine Learning", "Deep Learning", "NLP", "React", "Node.js", "MongoDB", 
-                "JavaScript", "Python", "CSS", "HTML", "Express.js", "TensorFlow", "Keras", "PyTorch", 
-                "C", "C++", "Java", "SQL",
+                "AI", "Machine Learning", "Deep Learning", "NLP", "React", "Node.js",
+                "MongoDB", "JavaScript", "Python", "CSS", "HTML", "Express.js",
+                "TensorFlow", "Keras", "PyTorch", "C", "C++", "Java", "SQL"
               ].map((skill, index) => (
                 <div key={`${i}-${index}`} className="skill-box">{skill}</div>
               ))
